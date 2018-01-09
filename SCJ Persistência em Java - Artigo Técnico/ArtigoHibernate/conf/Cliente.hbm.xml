@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM "../hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+  <class name="br.com.fiap.entity.Cliente" table="CLIENTES" >
+    <id column="IDCLIENTE" name="id" type="int">
+    	<generator class="native"></generator>
+    </id>
+    <property column="NOME" length="50" name="nome" type="string"/>
+    <set name="telefones" inverse="true" cascade="all">
+        <key column="IDCLIENTE" not-null="true" />
+        <one-to-many class="br.com.fiap.entity.Telefone"/>
+    </set>
+  </class>
+</hibernate-mapping>
