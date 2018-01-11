@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+
+	<defaultCache maxEntriesLocalHeap="50" eternal="false"
+		timeToIdleSeconds="1200" timeToLiveSeconds="1200">
+	</defaultCache>
+
+	<cache name="br.com.fiap.entity.Telefone" maxEntriesLocalHeap="100"
+		maxEntriesLocalDisk="0" eternal="false" timeToIdleSeconds="300"
+		timeToLiveSeconds="600">
+	</cache>
+
+</ehcache>

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
+import org.hibernate.LockOptions;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -49,7 +50,7 @@ public class ClienteHelper {
 		Telefone telefone = new Telefone();
 		try {
 			session = HibernateUtil.getSessionFactory().openSession();
-			session.load(telefone, idTelefone);
+			session.load(Telefone.class, idTelefone, LockOptions.UPGRADE);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
